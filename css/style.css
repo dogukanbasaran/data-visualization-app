@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --bgPrimary: #020912;
+    --bgSecondary: #e9e9e9;
+    --txtPrimary: #e9e9e9;
+    --txtSecondary: #020912;
+    --borderPrimary: rgba(255, 255, 255, 0.2);
+    --borderSecondary: rgba(0, 0, 0, 0.2); 
+}
+
+html{
+    font-family: "Open Sans", serif;
+    background: var(--bgPrimary);
+    color: #e9e9e9;
+    font-size: 1em;
+}
+
+header{
+    border-bottom: solid 1px var(--borderPrimary);
+    height: 10vh;
+}
+
+header .container{
+    height: 100%;
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: #e9e9e9;
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+main{
+    height: 80vh;
+}
+
+main .container{
+    height: 100%;
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.create-new-graph{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create-new-graph span{
+    font-size: 1.5em;
+}
+
+.build-btn{
+    height: 30px;
+    width: 120px;
+    padding: 0 5%;
+
+    cursor: pointer;
+    font-weight: 700;
+
+    color: var(--txtPrimary);
+    background: linear-gradient(120deg, rgba(36,103,32, 0.2) 50%, rgba(8,33,66, 0.8) 100%);
+    border: solid 1px var(--borderPrimary);
+    border-radius: 15px;
+}
+
+.build-btn:hover{
+    background: var(--bgSecondary);
+    color: var(--txtSecondary);
+    border: solid 1px var(--borderSecondary);
+    transition: 200ms ease-in;
+}
+
+.newForm{
+    position: absolute;
+    width: 90%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    padding: 5%;
+    
+
+    background: var(--bgSecondary);
+    border-radius: 10px;
+    color: var(--txtSecondary);
+}
+
+.newForm span{
+    text-align: center;
+    font-weight: 700;
+}
+
+.newForm input{
+    height: 30px;
+    padding: 2%;
+    border-radius: 5px;
+    border: solid 1px var(--borderSecondary);
+}
+
+.newForm select{
+    height: 30px;
+    padding: 2%;
+    border-radius: 5px;
+    border: solid 1px var(--borderSecondary);
+}
+
+.newForm button{
+    height: 30px;
+    width: 100%;
+    padding: 0 5%;
+
+    cursor: pointer;
+    font-weight: 700;
+
+    color: var(--txtPrimary);
+    background: linear-gradient(120deg, rgba(36,103,32, 1) 50%, rgba(8,33,66, 1) 100%);
+    border: solid 1px var(--borderPrimary);
+    border-radius: 5px;
+}
+
+.dataSet{
+    display: flex;
+    gap: 2%;
+}
+
+.dataSet input{
+    width: 50%;
+}
+
+footer{
+    border-top: solid 1px var(--borderPrimary);
+    height: 10vh;
+}
+
+footer .container{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
