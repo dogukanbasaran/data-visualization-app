@@ -113,21 +113,21 @@ main .container{
 }
 
 .newForm input{
-    height: 30px;
+    min-height: 30px;
     padding: 2%;
     border-radius: 5px;
     border: solid 1px var(--borderSecondary);
 }
 
 .newForm select{
-    height: 30px;
+    min-height: 30px;
     padding: 2%;
     border-radius: 5px;
     border: solid 1px var(--borderSecondary);
 }
 
 .newForm button{
-    height: 30px;
+    min-height: 30px;
     width: 100%;
     padding: 0 5%;
 
