@@ -47,7 +47,6 @@ const createForm = (newForm) => {
     });
 
     
-
     const graphType = document.createElement("select");
     const options = [
         {value: "line", text: "Line Chart"},
