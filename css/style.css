@@ -142,7 +142,12 @@ main .container{
 
 .dataSet{
     display: flex;
+    flex-direction: column;
     gap: 2%;
+    column-gap: 10px;
+    border: dashed 1px var(--borderSecondary);
+    max-height: 300px;
+    overflow: scroll;
 }
 
 .dataSet input{

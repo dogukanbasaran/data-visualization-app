@@ -26,13 +26,33 @@ const createForm = (newForm) => {
     const inputData = document.createElement("input");
     inputData.placeholder = "data value";
 
-    dataset.appendChild(inputLabels);
-    dataset.appendChild(inputData);
+    const data = document.createElement("div");
+    data.appendChild(inputLabels);
+    data.appendChild(inputData);
 
+    dataset.appendChild(data);
+
+    const newDataBtn = document.createElement("button");
+    newDataBtn.textContent = "add data";
+    newDataBtn.addEventListener("click", () => {
+        const inputLabels = document.createElement("input");
+        inputLabels.placeholder = "data label";
+    
+        const inputData = document.createElement("input");
+        inputData.placeholder = "data value";
+    
+        const data = document.createElement("div");
+        data.appendChild(inputLabels);
+        data.appendChild(inputData);
+    
+        dataset.appendChild(data);
+    });
+    
     const graphType = document.createElement("select");
     const options = [
-        {value: "bar", text: "bar chart"},
-        {value: "histogram", text: "histogram"}
+        {value: "bar", text: "Bar Chart"},
+        {value: "histogram", text: "Histogram"},
+        {value: "pie", text: "Pie Chart"},
     ];
     options.forEach(optionData => {
         const option = document.createElement("option");
@@ -47,6 +67,7 @@ const createForm = (newForm) => {
     newForm.appendChild(heading);
     newForm.appendChild(inputTitle);
     newForm.appendChild(dataset);
+    newForm.appendChild(newDataBtn);
     newForm.appendChild(graphType);
     newForm.appendChild(formBtn);
 }
