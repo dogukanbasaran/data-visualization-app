@@ -1,6 +1,10 @@
 const buildBtn = document.querySelector(".build-btn");
 const main = document.querySelector("main .container");
-const chartArea = document.querySelector("main .container canvas").getContext("2d");
+
+const createNewGraph = document.querySelector("main .container .create-new-graph");
+
+const chartContainer = document.querySelector("main .container .chart-container");
+const chartArea = document.querySelector("main .container .chart-container canvas").getContext("2d");
 
 
 buildBtn.addEventListener("click", () => {
@@ -14,7 +18,7 @@ buildBtn.addEventListener("click", () => {
 
 const createForm = (newForm) => {
     const heading = document.createElement("span");
-    heading.textContent = "Building your graph";
+    heading.textContent = "Building your chart";
 
     const inputTitle = document.createElement("input");
     inputTitle.placeholder = "chart title";
@@ -65,6 +69,11 @@ const createForm = (newForm) => {
     formBtn.textContent = "create graph";
     formBtn.addEventListener("click", () => {
 
+        main.removeChild(newForm);
+        createNewGraph.remove();
+        
+        chartContainer.style.display = "block";
+
         const chartData = {
             labels: labelList,
             datasets: [{
@@ -79,8 +88,6 @@ const createForm = (newForm) => {
         };
 
         const chart = new Chart(chartArea, config);
-        main.removeChild(newForm);
-
     });
 
     newForm.appendChild(heading);

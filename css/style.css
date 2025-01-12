@@ -105,7 +105,6 @@ main .container{
     flex-direction: column;
     gap: 2%;
     padding: 5%;
-    
 
     background: var(--bgSecondary);
     border-radius: 10px;
@@ -173,10 +172,32 @@ footer .container{
     justify-content: center;
 }
 
-.chart{
+.chart-container{
    border: solid 1px var(--borderPrimary);
-   height: 300px;
-   width: 300px;
+   border-radius: 10px;
    padding: 2%;
+   width: 90vw;
+   display: none;
 }
 
+.chart-container h4{
+    text-align: center;
+}
+
+.chart{
+    display: flex;
+    height: 100%;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .chart-container{
+        max-width: 60vw;
+     }
+}
+
+@media screen and (min-width: 1440px){
+    .newForm{
+        max-width: 50%;
+    }
+}
