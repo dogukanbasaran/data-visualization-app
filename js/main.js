@@ -1,21 +1,14 @@
 const buildBtn = document.querySelector(".build-btn");
 const main = document.querySelector("main .container");
-
 const chartArea = document.querySelector("main .container canvas").getContext("2d");
 
-const chartData = {
-    labels: ['Dogukan', 'Ekinsu', 'Yavuzhan', 'Ece Dilara', 'Atakan', 'Hazal Asu'],
-    datasets: [{
-    data: [170, 161, 178, 160, 172, 140],
-}]
-};
 
 buildBtn.addEventListener("click", () => {
     const newForm = document.createElement("div");
     newForm.classList.add("newForm");
 
     createForm(newForm)
-    
+
     main.appendChild(newForm);
 });
 
@@ -24,39 +17,37 @@ const createForm = (newForm) => {
     heading.textContent = "Building your graph";
 
     const inputTitle = document.createElement("input");
-    inputTitle.placeholder = "graph title";
+    inputTitle.placeholder = "chart title";
+
+    const labelList = [];
+    const dataList = [];
 
     const dataset = document.createElement("div");
     dataset.classList.add("dataSet");
-
-    const inputLabels = document.createElement("input");
-    inputLabels.placeholder = "data label";
-
-    const inputData = document.createElement("input");
-    inputData.placeholder = "data value";
-
-    const data = document.createElement("div");
-    data.appendChild(inputLabels);
-    data.appendChild(inputData);
-
-    dataset.appendChild(data);
 
     const newDataBtn = document.createElement("button");
     newDataBtn.textContent = "add data";
     newDataBtn.addEventListener("click", () => {
         const inputLabels = document.createElement("input");
         inputLabels.placeholder = "data label";
-    
+        inputLabels.addEventListener("change", () => {
+            labelList.push(inputLabels.value);
+        })
+
         const inputData = document.createElement("input");
         inputData.placeholder = "data value";
-    
+        inputData.addEventListener("change", () => {
+            dataList.push(inputData.value);
+        })
+
         const data = document.createElement("div");
         data.appendChild(inputLabels);
         data.appendChild(inputData);
-    
         dataset.appendChild(data);
     });
+
     
+
     const graphType = document.createElement("select");
     const options = [
         {value: "line", text: "Line Chart"},
@@ -74,6 +65,15 @@ const createForm = (newForm) => {
     const formBtn = document.createElement("button");
     formBtn.textContent = "create graph";
     formBtn.addEventListener("click", () => {
+
+        const chartData = {
+            labels: labelList,
+            datasets: [{
+            data: dataList,
+            label: `${inputTitle.value}`
+        }]
+        };
+
         const config = {
             type: `${graphType.options[graphType.selectedIndex].value}`,
             data: chartData
@@ -81,8 +81,6 @@ const createForm = (newForm) => {
 
         const chart = new Chart(chartArea, config);
         main.removeChild(newForm);
-
-        console.log()
 
     });
 
