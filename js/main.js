@@ -41,7 +41,7 @@ const createForm = (newForm) => {
     dataset.classList.add("dataSet");
 
     const newDataBtn = document.createElement("button");
-    newDataBtn.textContent = "add data";
+    newDataBtn.textContent = "add new data";
     newDataBtn.addEventListener("click", () => {
         const inputLabels = document.createElement("input");
         inputLabels.placeholder = "data label";
@@ -77,7 +77,7 @@ const createForm = (newForm) => {
 
 
     const formBtn = document.createElement("button");
-    formBtn.textContent = "create graph";
+    formBtn.textContent = "build";
     formBtn.addEventListener("click", () => {
 
         main.removeChild(newForm);

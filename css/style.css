@@ -32,19 +32,16 @@ header .container{
     height: 100%;
     width: 90%;
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 header a{
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1%;
-
     width: 100%;
     color: #e9e9e9;
     text-decoration: none;
@@ -63,10 +60,8 @@ main .container{
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 5%;
     justify-content: center;
     align-items: center;
-
     position: relative;
 }
 
@@ -86,10 +81,8 @@ main .container{
     height: 40px;
     width: 160px;
     padding: 0 5%;
-
     cursor: pointer;
     font-weight: 700;
-
     color: var(--txtPrimary);
     background: linear-gradient(120deg, rgba(36,103,32, 0.2) 50%, rgba(8,33,66, 0.8) 100%);
     border: solid 1px var(--borderPrimary);
@@ -105,16 +98,13 @@ main .container{
 
 .newForm{
     position: absolute;
-
     width: 300px;
     height: 450px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2%;
     padding: 10px;
-
     background: var(--bgSecondary);
     border-radius: 10px;
     color: var(--txtSecondary);
@@ -124,15 +114,12 @@ main .container{
     position: absolute;
     right: 2%;
     top: 2%;
-
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-size: 1.50em;
  }
-
-
 
 .newForm .newForm-container{
     height: 100%;
@@ -141,6 +128,7 @@ main .container{
     flex-direction: column;
     gap: 2%;
 }
+
 .newForm .newForm-container input{
     min-height: 40px;
     padding: 2%;
@@ -195,16 +183,15 @@ footer .container{
     justify-content: center;
 }
 
-.chart-container{
-   border: solid 1px var(--borderPrimary);
-   border-radius: 10px;
-   padding: 2%;
-   width: 90vw;
-   display: none;
+
+@media screen and (min-width: 425px) {
+    .newForm{
+        width: 350px;
+    }
 }
 
-.chart{
-    display: flex;
-    height: 100%;
+@media screen and (min-width: 768px){
+    .newForm{
+        width: 400px;
+    }
 }
-
