@@ -12,7 +12,8 @@
     --txtPrimary: #e9e9e9;
     --txtSecondary: #020912;
     --borderPrimary: rgba(255, 255, 255, 0.2);
-    --borderSecondary: rgba(0, 0, 0, 0.2); 
+    --borderSecondary: rgba(0, 0, 0, 0.2);
+    --btnPrimary: linear-gradient(120deg, rgba(36,103,32,1) 0%, rgba(8,33,66,1) 0%, rgba(36,103,32,1) 100%);
 }
 
 html{
@@ -38,6 +39,12 @@ header .container{
 }
 
 header a{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+
     width: 100%;
     color: #e9e9e9;
     text-decoration: none;
@@ -98,50 +105,66 @@ main .container{
 
 .newForm{
     position: absolute;
-    width: 90%;
-    height: 80%;
+
+    width: 300px;
+    height: 450px;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2%;
-    padding: 5%;
+    padding: 10px;
 
     background: var(--bgSecondary);
     border-radius: 10px;
     color: var(--txtSecondary);
 }
 
-.newForm span{
-    text-align: center;
-    font-weight: 700;
-}
+.newForm .close-btn{
+    position: absolute;
+    right: 2%;
+    top: 2%;
 
-.newForm input{
-    min-height: 40px;
-    padding: 2%;
-    border-radius: 5px;
-    border: solid 1px var(--borderSecondary);
-}
-
-.newForm select{
-    min-height: 40px;
-    padding: 2%;
-    border-radius: 5px;
-    border: solid 1px var(--borderSecondary);
-}
-
-.newForm button{
-    min-height: 40px;
-    width: 100%;
-    padding: 0 5%;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    font-weight: 700;
+    font-size: 1.50em;
+ }
 
-    color: var(--txtPrimary);
-    background: linear-gradient(120deg, rgba(36,103,32, 1) 50%, rgba(8,33,66, 1) 100%);
-    border: solid 1px var(--borderPrimary);
+
+
+.newForm .newForm-container{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+.newForm .newForm-container input{
+    min-height: 40px;
+    padding: 2%;
+    font-weight: 600;
+    border: 1px solid var(--borderSecondary);
     border-radius: 5px;
+    outline: none;
+}
+
+.newForm .newForm-container select{
+   min-height: 40px;
+   font-weight: 600;
+   border: solid 1px var(--borderSecondary);
+   border-radius: 5px;
+   outline: none;
+}
+
+.newForm .newForm-container button{
+   min-height: 40px;
+   background: var(--btnPrimary);
+   color: var(--txtPrimary);
+   border: solid 1px var(--borderSecondary);
+   border-radius: 5px;
+   cursor: pointer;
 }
 
 .dataSet{
@@ -150,7 +173,7 @@ main .container{
     gap: 2%;
     column-gap: 10px;
     border: dashed 1px var(--borderSecondary);
-    max-height: 280px;
+    max-height: 200px;
     overflow: scroll;
 }
 
@@ -180,24 +203,8 @@ footer .container{
    display: none;
 }
 
-.chart-container h4{
-    text-align: center;
-}
-
 .chart{
     display: flex;
     height: 100%;
 }
 
-
-@media screen and (min-width: 1024px) {
-    .chart-container{
-        max-width: 60vw;
-     }
-}
-
-@media screen and (min-width: 1440px){
-    .newForm{
-        max-width: 50%;
-    }
-}

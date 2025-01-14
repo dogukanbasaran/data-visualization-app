@@ -17,8 +17,19 @@ buildBtn.addEventListener("click", () => {
 });
 
 const createForm = (newForm) => {
-    const heading = document.createElement("span");
-    heading.textContent = "Building your chart";
+
+    const closeBtn = document.createElement("span");
+    closeBtn.classList.add("close-btn");
+    closeBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    closeBtn.addEventListener("click", () => {
+        newForm.remove();
+    });
+
+    const heading = document.createElement("h4");
+    heading.textContent = "Create a new chart";
+
+    const newFormContainer = document.createElement("div");
+    newFormContainer.classList.add("newForm-container");
 
     const inputTitle = document.createElement("input");
     inputTitle.placeholder = "chart title";
@@ -90,10 +101,13 @@ const createForm = (newForm) => {
         const chart = new Chart(chartArea, config);
     });
 
+    newForm.appendChild(closeBtn);
     newForm.appendChild(heading);
-    newForm.appendChild(inputTitle);
-    newForm.appendChild(dataset);
-    newForm.appendChild(newDataBtn);
-    newForm.appendChild(graphType);
-    newForm.appendChild(formBtn);
+ 
+    newFormContainer.appendChild(inputTitle);
+    newFormContainer.appendChild(dataset);
+    newFormContainer.appendChild(newDataBtn);
+    newFormContainer.appendChild(graphType);
+    newFormContainer.appendChild(formBtn);
+    newForm.appendChild(newFormContainer);
 }
