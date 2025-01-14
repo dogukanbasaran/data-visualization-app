@@ -5,7 +5,7 @@ const createNewGraph = document.querySelector("main .container .create-new-graph
 
 const chartContainer = document.querySelector("main .container .chart-container");
 const chartArea = document.querySelector("main .container .chart-container canvas").getContext("2d");
-
+const printBtn = document.querySelector("main .container .chart-container #print-btn button");
 
 buildBtn.addEventListener("click", () => {
     const newForm = document.createElement("div");
@@ -85,6 +85,10 @@ const createForm = (newForm) => {
         createNewGraph.remove();
         
         chartContainer.style.display = "block";
+
+        printBtn.addEventListener("click", () => {
+            window.print();
+        })
 
         const chartData = {
             labels: labelList,

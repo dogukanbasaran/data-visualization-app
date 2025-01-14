@@ -193,6 +193,20 @@ footer .container{
     margin: auto;
 }
 
+#print-btn{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.chart-container button{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: solid 1px var(--borderSecondary);
+    cursor: pointer;
+}
+
 
 
 @media screen and (min-width: 425px) {
