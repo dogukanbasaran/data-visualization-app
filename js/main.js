@@ -67,6 +67,7 @@ const createForm = (newForm) => {
         {value: "line", text: "Line Chart"},
         {value: "bar", text: "Bar Chart"},
         {value: "pie", text: "Pie Chart"},
+        {value: "doughnut", text: "Doughnut Chart"}
     ];
     options.forEach(optionData => {
         const option = document.createElement("option");
@@ -89,13 +90,40 @@ const createForm = (newForm) => {
             labels: labelList,
             datasets: [{
             data: dataList,
-            label: `${inputTitle.value}`
+            label: `${inputTitle.value}`,
+            backgroundColor: 'rgba(8,33,66,0.2)',
+            borderColor: 'rgba(36,103,32,1)',
+            borderWidth: 1,
+            tension: 0.4
         }]
         };
 
         const config = {
             type: `${graphType.options[graphType.selectedIndex].value}`,
-            data: chartData
+            data: chartData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: `${inputTitle.value}`
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: true
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                
+            }
         };
 
         const chart = new Chart(chartArea, config);

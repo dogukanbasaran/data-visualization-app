@@ -183,15 +183,33 @@ footer .container{
     justify-content: center;
 }
 
+.chart-container{
+    border: solid 1px var(--borderPrimary);
+    border-radius: 10px;
+    padding: 2%;
+    background: var(--bgSecondary);
+    display: none;
+    width: 300px;
+    margin: auto;
+}
+
+
 
 @media screen and (min-width: 425px) {
     .newForm{
+        width: 350px;
+    }
+
+    .chart-container{
         width: 350px;
     }
 }
 
 @media screen and (min-width: 768px){
     .newForm{
+        width: 400px;
+    }
+    .chart-container{
         width: 400px;
     }
 }
